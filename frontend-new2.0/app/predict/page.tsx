@@ -15,8 +15,7 @@ import MacroDetailPanel from '@/components/MacroDetailPanel';
 import { validateCoordinates, generateTrajectoryFromPoints, TrajectoryPoint } from '@/lib/geoutils';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// ============================================================================
-// ---   叙事核心：业务课题剧本 ---
+  // ---   叙事核心：业务课题剧本 ---
 const MISSIONS = [
   { id: 'planning', name: '🏙️ 城市慢行系统规划', center: [116.391, 40.007] as [number, number], defaultKey: 'walk', briefing: "当前课题：奥森公园周边近期反馈人车混行严重。我们需要通过AI识别出慢行（步行/骑行）的高频轨迹，以决定是否需要增设隔离带与慢行绿道。" },
   { id: 'commuting', name: '🏢 科技园早高峰疏导', center: [116.310, 39.980] as [number, number], defaultKey: 'bus', briefing: "当前课题：中关村园区早高峰通勤效率低下。目标是筛查公共交通（公交/地铁）的拥堵断点，评估是否需要由政府联合企业开设定制接驳班车。" },
@@ -41,10 +40,8 @@ const PRESET_SCENARIOS = {
 
 interface StructuredSuggestion { title: string; status: string; analysis: string; actions: string[]; }
 
-// ============================================================================
-//   核心推演主面板
-// ============================================================================
-function PredictContent() {
+  //   核心推演主面板
+  function PredictContent() {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -481,10 +478,8 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
   );
 }
 
-// ============================================================================
-//   页面骨架与导航
-// ============================================================================
-export default function PredictPage() {
+  //   页面骨架与导航
+  export default function PredictPage() {
   const router = useRouter();
   const [currentTime, setCurrentTime] = useState<string>('');
 
