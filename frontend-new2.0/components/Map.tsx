@@ -120,7 +120,7 @@ export default function Map({ points, center, predictedMode }: MapProps) {
       heatmapRef.current.setDataSet({ data: heatData, max: 100 });
     });
 
-  }, [pointsStr, isLoaded]); // 👈 依赖项变成了字符串
+  }, [pointsStr, isLoaded]); 
 
   // 3. 仅负责独立控制地图中心平滑移动 (点击课题时生效)
   useEffect(() => {
