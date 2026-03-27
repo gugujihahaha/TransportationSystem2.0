@@ -31,7 +31,7 @@ export default function Map({ points, center, predictedMode }: MapProps) {
   const heatmapRef = useRef<any>(null);      
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // 1. 地图初始化 (绝对只执行一次)
+  // 1. 地图初始化
   useEffect(() => {
     const loadAMap = () => {
       (window as any)._AMapSecurityConfig = {
@@ -70,10 +70,10 @@ export default function Map({ points, center, predictedMode }: MapProps) {
     return () => {};
   }, []);
 
-  //   终极防抖技巧：把坐标点对象转换为字符串作为依赖，彻底防止父组件无关渲染引起的重绘
+  //   把坐标点对象转换为字符串作为依赖，彻底防止父组件无关渲染引起的重绘
   const pointsStr = JSON.stringify(points);
 
-  // 2. 仅负责绘制静态图层（只有当点真正改变时才重绘，避免闪烁和狂拉视角）
+  // 2. 绘制静态图层
   useEffect(() => {
     if (!isLoaded || !mapInstanceRef.current || points.length === 0) return;
     const AMap = (window as any).AMap;
@@ -122,13 +122,13 @@ export default function Map({ points, center, predictedMode }: MapProps) {
 
   }, [pointsStr, isLoaded]); 
 
-  // 3. 仅负责独立控制地图中心平滑移动 (点击课题时生效)
+  // 3. 独立控制地图中心平滑移动 
   useEffect(() => {
     if (!isLoaded || !mapInstanceRef.current || !center) return;
     mapInstanceRef.current.panTo(center);
   }, [center, isLoaded]);
 
-  // 4. 仅负责 AI 推演后的小车动画 (与重绘轨迹完全剥离)
+  // 4. AI 推演后的小车动画 (与重绘轨迹完全剥离)
   useEffect(() => {
     if (!isLoaded || !mapInstanceRef.current || points.length === 0 || !predictedMode) return;
     const AMap = (window as any).AMap;

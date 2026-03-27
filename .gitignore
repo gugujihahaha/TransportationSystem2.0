@@ -76,3 +76,7 @@ exp2/checkpoints/
 # 忽略缓存文件夹和 pkl 数据文件
 cache/
 *.pkl
+
+app.db
+*.db
+*.sqlite3

@@ -157,7 +157,7 @@ export default function ProfilePage() {
                     : 'bg-red-500/10 border-red-500/30 text-red-400'
                 }`}
               >
-                <span>{message.type === 'success' ? '✅' : '⚠️'}</span>
+                <span>{message.type === 'success' ? '  ' : '⚠️'}</span>
                 {message.text}
               </motion.div>
             )}

@@ -15,7 +15,7 @@ import MacroDetailPanel from '@/components/MacroDetailPanel';
 import { validateCoordinates, generateTrajectoryFromPoints, TrajectoryPoint } from '@/lib/geoutils';
 import { motion, AnimatePresence } from 'framer-motion';
 
-  // ---   叙事核心：业务课题剧本 ---
+  // ---   叙事核心：业务课题 ---
 const MISSIONS = [
   { id: 'planning', name: '🏙️ 城市慢行系统规划', center: [116.391, 40.007] as [number, number], defaultKey: 'walk', briefing: "当前课题：奥森公园周边近期反馈人车混行严重。我们需要通过AI识别出慢行（步行/骑行）的高频轨迹，以决定是否需要增设隔离带与慢行绿道。" },
   { id: 'commuting', name: '🏢 科技园早高峰疏导', center: [116.310, 39.980] as [number, number], defaultKey: 'bus', briefing: "当前课题：中关村园区早高峰通勤效率低下。目标是筛查公共交通（公交/地铁）的拥堵断点，评估是否需要由政府联合企业开设定制接驳班车。" },
@@ -81,7 +81,6 @@ interface StructuredSuggestion { title: string; status: string; analysis: string
     { id: 'exp4', name: 'EXP-4', detail: '+ Focal Loss' }
   ];
 
-  //   所有 Hook 全部安全放在这里！
   useEffect(() => {
     (window as any)._AMapSecurityConfig = { securityJsCode: '0fb0f8fa5a04a38e318d1ad5c87e3b97' };
   }, []);
@@ -246,7 +245,6 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
     }
   };
 
-  //   拦截必须在所有 Hooks 之后！
   if (authLoading || !user) return <div className="text-center mt-20 text-[#00f0ff] font-bold text-xl tracking-widest animate-pulse">系统权限核准中...</div>;
 
   return (
@@ -339,7 +337,7 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
   <AnimatePresence>
     {predictedMode && (
       <motion.div
-        key="predicted-mode-panel"  // ✅ 添加唯一 key
+        key="predicted-mode-panel"  //    添加唯一 key
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         className="exp2-glass-card p-8 border-t-4 border-[#00f0ff] mb-12 relative overflow-hidden"
@@ -356,7 +354,6 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
             <h4 className="text-4xl font-black text-[#00f0ff] uppercase tracking-wider drop-shadow-[0_0_10px_#00f0ff]">{predictedMode}</h4>
             <div className="mt-4"><ConfidenceRing confidence={confidence} /></div>
             
-            {/*   加上安全问号 */}
             {!predictedMode?.includes('Invalid') && (
               <button onClick={() => setIsAdviceModalOpen(true)} className="mt-8 w-full py-2.5 bg-gradient-to-r from-[#00f0ff]/20 to-[#0070f3]/20 border border-[#00f0ff]/50 text-[#00f0ff] font-bold tracking-widest text-sm rounded hover:from-[#00f0ff] hover:to-[#0070f3] hover:text-white hover:shadow-[0_0_15px_rgba(0,240,255,0.6)] transition-all z-10 flex items-center justify-center gap-2">
                 <span className="animate-pulse">⚡</span> 查看深度通勤建议
@@ -379,7 +376,6 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
             </div>
           </div>
 
-          {/*   加上安全问号 */}
           {macroStats && !predictedMode?.includes('Invalid') && (
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="col-span-1 md:col-span-4 bg-[rgba(15,23,42,0.8)] p-8 rounded-xl border border-[#0070f3]/40 mt-4 shadow-[0_0_30px_rgba(0,112,243,0.15)]">
               <div className="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-700 pb-4 gap-4">
@@ -421,10 +417,9 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
       </motion.div>
     )}
     
-    {/*   加上安全问号 */}
     {compareResults && predictedMode && !predictedMode?.includes('Invalid') && (
       <motion.div
-        key="compare-results-panel"  // ✅ 添加唯一 key
+        key="compare-results-panel"  //    添加唯一 key
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}

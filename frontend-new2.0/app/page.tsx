@@ -197,7 +197,7 @@ export default function DashboardHome() {
                 <div className="absolute bottom-3 right-3 text-[11px] text-[#00f0ff] font-mono bg-[#00f0ff]/10 border border-[#00f0ff]/30 px-2 py-1 rounded animate-pulse">模式: 实时推演拦截</div>
              </div>
 
-             {/* 🖥️ 全汉化终端拦截日志 (加入延迟 ms 字段) */}
+             {/*     终端拦截日志 (加入延迟 ms 字段) */}
              <div className="h-[180px] w-full bg-[#030712] border border-slate-700 p-4 font-mono flex flex-col shadow-[inset_0_0_20px_rgba(0,0,0,1)] rounded-sm shrink-0">
                 <div className="flex justify-between items-center border-b border-slate-800 pb-3 mb-3 shrink-0">
                    <span className="text-slate-500 text-[11px]">监控终端 | /var/log/st_intercept.log</span>
