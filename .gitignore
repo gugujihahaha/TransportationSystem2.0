@@ -1,0 +1,74 @@
+# ==========================================
+# 1. 全局配置 (系统缓存与 IDE 配置文件)
+# ==========================================
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# ==========================================
+# 2. 数据与大文件 (极其重要！防止 GitHub 推送失败)
+# ==========================================
+data/
+results/
+logs/
+
+# ==========================================
+# 3. 前端部分 (Node.js/Vue/React 等依赖包与产物)
+# ==========================================
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+# 忽略前端本地环境变量文件（保护隐私）
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# 4. 后端部分 (Python/PyTorch/虚拟环境/模型权重)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook 缓存
+.ipynb_checkpoints/
+
+# 深度学习模型文件 (防止过大传不上去)
+exp2/checkpoints/
+*.pth
+*.pt
+*.ckpt
