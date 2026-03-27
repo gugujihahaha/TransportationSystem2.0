@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 
-// 🌟 统一视觉容器 (青色学术风)
+//   统一视觉容器 (青色学术风)
 const DvBox = ({ title, children, className = "", highlight = false }: { title?: string, children: React.ReactNode, className?: string, highlight?: boolean }) => (
   <div className={`relative bg-[rgba(6,18,46,0.6)] border ${highlight ? 'border-[#00f0ff] shadow-[0_0_30px_rgba(0,240,255,0.1)]' : 'border-[#113d6a]'} p-8 rounded-xl overflow-hidden backdrop-blur-md transition-all ${className}`}>
     <div className={`absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 ${highlight ? 'border-[#00f0ff]' : 'border-slate-500'}`}></div>
@@ -22,7 +22,7 @@ const DvBox = ({ title, children, className = "", highlight = false }: { title?:
 export default function AccuracyInsightPage() {
   const router = useRouter();
 
-  // 🌟 1. 全局消融实验数据 (来自你的真实 JSON 的 accuracy 字段)
+  //   1. 全局消融实验数据 (来自你的真实 JSON 的 accuracy 字段)
   const ablation = [
     { id: 'Exp1', acc: 83.30, label: '基础物理运动学基线', color: 'bg-slate-600', desc: '纯物理特征，基线性能' },
     { id: 'Exp2', acc: 83.88, label: '+ 空间路网语义映射', color: 'bg-slate-500', desc: '引入 OSM，精度微升' },
@@ -30,7 +30,7 @@ export default function AccuracyInsightPage() {
     { id: 'Exp3', acc: 84.84, label: '全维特征融合 (SOTA 版)', color: 'bg-[#00f0ff]', desc: '气象补偿加持，全局最优' }
   ];
 
-  // 🌟 2. 细粒度 F1-Score 对比 (严格提取自你的 Exp1 与 Exp3 JSON)
+  //   2. 细粒度 F1-Score 对比 (严格提取自你的 Exp1 与 Exp3 JSON)
   // 重点展示 Subway 和 Car 的巨大提升，以及 Walk 的微小 Trade-off
   const classF1 = [
     { name: 'Subway', exp1: 61.1, exp3: 76.4, diff: '+15.3' }, // 巨大提升

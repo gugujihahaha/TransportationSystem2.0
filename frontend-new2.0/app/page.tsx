@@ -7,7 +7,7 @@ import { fetchWithAuth } from '@/lib/authApi';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar'; 
 
-// 🌟 科技风沉浸式卡片容器 (废除溢出隐藏，改为弹性拉伸)
+//   科技风沉浸式卡片容器 (废除溢出隐藏，改为弹性拉伸)
 const DvBox = ({ title, subTitle, children, className = "", onClick, highlight = false, isDanger = false }: { title?: string, subTitle?: string, children: React.ReactNode, className?: string, onClick?: () => void, highlight?: boolean, isDanger?: boolean }) => {
   const color = isDanger ? 'red-500' : highlight ? '[#00f0ff]' : '[#00f0ff]/40';
   const hoverColor = isDanger ? 'red-400' : '[#00f0ff]';
@@ -208,7 +208,7 @@ export default function DashboardHome() {
                     {logs.map((log) => (
                       <motion.div key={log.id} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3 border-l-2 border-emerald-500/30 pl-2">
                         <span className="text-slate-500 shrink-0">[{log.time}]</span>
-                        {/* 🌟 新增的延迟展示区 */}
+                        {/*   新增的延迟展示区 */}
                         <span className="text-yellow-400 font-bold shrink-0 w-[80px]">延迟:{log.latency}ms</span>
                         <span className="text-[#00f0ff] shrink-0 w-[140px] whitespace-nowrap">坐标: {log.lat}, {log.lng}</span>
                         <span className="text-emerald-400/90 flex-1 truncate">{log.text}</span>

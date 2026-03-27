@@ -7,7 +7,7 @@ import { fetchWithAuth } from '@/lib/authApi';
 import ConfusionMatrix from '@/components/ConfusionMatrix';
 import Navbar from '@/components/Navbar';
 
-// 🌟 统一视觉容器：危险/诊断风格 (红/青配色)
+//   统一视觉容器：危险/诊断风格 (红/青配色)
 const DvBox = ({ title, children, className = "", isDanger = false }: { title?: string, children: React.ReactNode, className?: string, isDanger?: boolean }) => (
   <div className={`relative bg-[rgba(6,18,46,0.6)] border ${isDanger ? 'border-red-500/30' : 'border-[#113d6a]'} p-8 rounded-xl overflow-hidden backdrop-blur-md transition-all hover:border-[#00f0ff]/50 ${className}`}>
     <div className={`absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 ${isDanger ? 'border-red-500' : 'border-[#00f0ff]'}`}></div>
@@ -25,7 +25,7 @@ export default function ConfusionInsightPage() {
   const router = useRouter();
   const [matrixData, setMatrixData] = useState<number[][] | null>(null);
   
-  // 🌟 保留你要求的交互权重调节，默认 70%
+  //   保留你要求的交互权重调节，默认 70%
   const [weight, setWeight] = useState(70);
   const labels = ["Walk", "Bike", "Bus", "Car", "Train", "Subway"];
 
@@ -86,7 +86,7 @@ export default function ConfusionInsightPage() {
           {/* 右侧：误差诊断与交互式调参 */}
           <div className="col-span-5 space-y-8">
             
-            {/* 🌟 核心调参交互区 */}
+            {/*   核心调参交互区 */}
             <DvBox title="特征补偿机制：空间语义权重下发" isDanger={true}>
               <div className="space-y-6">
                 <div className="bg-red-500/10 border border-red-500/20 p-5 rounded-lg">

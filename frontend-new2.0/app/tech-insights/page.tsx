@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 
-// 🌟 通用科幻边框组件 (弹性高度，防遮挡)
+//   通用科幻边框组件 (弹性高度，防遮挡)
 const DvBox = ({ title, children, className = "" }: { title?: string, children: React.ReactNode, className?: string }) => (
   <div className={`relative bg-[rgba(6,18,46,0.6)] border border-[#00f0ff]/30 shadow-[inset_0_0_20px_rgba(0,192,255,0.08)] p-6 flex flex-col rounded-sm hover:border-[#00f0ff]/80 transition-colors ${className}`}>
     <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#00f0ff]"></div>

@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 export default function CasesInsightPage() {
   const router = useRouter();
 
-  // 🌟 针对当前数据集（Geolife）的实测审计项
+  //   针对当前数据集（Geolife）的实测审计项
   const auditReport = [
     { 
       title: '慢行友好系统空间重构实证', 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 
-// 🌟 核心引擎视觉容器 (橙色高能警告风)
+//   核心引擎视觉容器 (橙色高能警告风)
 const DvBox = ({ title, children, className = "" }: { title?: string, children: React.ReactNode, className?: string }) => (
   <div className={`relative bg-[rgba(6,18,46,0.6)] border border-[#113d6a] p-8 rounded-xl overflow-hidden backdrop-blur-md transition-all hover:border-orange-500/50 ${className}`}>
     <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-orange-500"></div>
@@ -22,7 +22,7 @@ const DvBox = ({ title, children, className = "" }: { title?: string, children: 
 export default function ArchitectureInsightPage() {
   const router = useRouter();
 
-  // 🌟 独家主权数据：58 维特征的真实拆解
+  //   独家主权数据：58 维特征的真实拆解
   const features = [
     { cat: '运动学张量 (21 Dim)', ratio: 36, icon: '🏃', color: '#00f0ff', desc: '提取速度、加速度、跃度及航向角变化率，构建基础物理序列。' },
     { cat: '空间语义特征 (15 Dim)', ratio: 26, icon: '🗺️', color: '#a855f7', desc: '引入 OSM 路网拓扑映射，计算与地铁站、公交站点的 POI 距离。' },
@@ -30,7 +30,7 @@ export default function ArchitectureInsightPage() {
     { cat: '气象补偿特征 (10 Dim)', ratio: 17, icon: '🌦️', color: '#10b981', desc: '融合实时温度、降水与风速数据，构建恶劣天气下的信号衰减补偿。' }
   ];
 
-  // 🌟 Exp3 的神经网络 Pipeline
+  //   Exp3 的神经网络 Pipeline
   const networkLayers = [
     { step: 'TENSOR INPUT', name: '多源异构张量对齐', desc: '58-Dimensional Feature Fusion', color: 'border-orange-500/30' },
     { step: 'ATTN LAYER', name: '跨模态自注意力层', desc: 'Cross-Modal Attention (提取空间-气象耦合关联)', color: 'border-[#a855f7]/40' },

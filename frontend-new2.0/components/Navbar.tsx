@@ -12,7 +12,7 @@ export default function Navbar() {
   const { user, loading, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // 🌟 重构后的核心导航菜单（5项，符合完美故事线）
+  //   重构后的核心导航菜单（5项，符合完美故事线）
   const navItems = user ? [
     { href: '/', label: '首页看板' },
     { href: '/predict', label: '在线预测' },

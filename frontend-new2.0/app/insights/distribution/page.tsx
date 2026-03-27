@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import ModePieChart from '@/components/ModePieChart'; // 必须引回你的饼图组件
 
-// 🌟 统一视觉容器
+//   统一视觉容器
 const DvBox = ({ title, children, className = "" }: { title?: string, children: React.ReactNode, className?: string }) => (
   <div className={`relative bg-[rgba(6,18,46,0.6)] border border-[#113d6a] p-6 rounded-xl overflow-hidden backdrop-blur-md transition-all hover:border-[#00f0ff]/50 ${className}`}>
     <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#00f0ff]"></div>
@@ -23,7 +23,7 @@ const DvBox = ({ title, children, className = "" }: { title?: string, children: 
 export default function DistributionInsightPage() {
   const router = useRouter();
 
-  // 🌟 重新引回：6 大类真实占比数据
+  //   重新引回：6 大类真实占比数据
   const modeData = [
     { name: "Walk (步行)", value: 25, color: "#10b981" },
     { name: "Bike (骑行)", value: 20, color: "#3b82f6" },
@@ -33,7 +33,7 @@ export default function DistributionInsightPage() {
     { name: "Subway (地铁)", value: 2, color: "#06b6d4" }
   ];
 
-  // 🌟 核心潮汐数据
+  //   核心潮汐数据
   const timeSeriesData = [
     { hour: '06:00', walk: 10, bus: 20, car: 15 },
     { hour: '08:00', walk: 45, bus: 85, car: 90 }, // 早高峰
