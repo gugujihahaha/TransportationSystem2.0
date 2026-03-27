@@ -1,0 +1,250 @@
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "tailwindcss/base";
+
+:root {
+  --primary: #0070f3;
+  --accent: #00f0ff;
+  --purple: #9d00ff;
+  --bg-1: #050a1e;
+  --bg-2: #0a1438;
+  --text-white: #ffffff;
+  --text-gray: #e2e8f0;
+  --text-muted: #94a3b8;
+  --neon-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent)/60;
+  --glass-bg: rgba(10, 20, 60, 0.8);
+  --glass-border: rgba(0, 240, 255, 0.4);
+}
+
+body {
+  background: 
+    radial-gradient(circle at 50% 50%, var(--bg-2), var(--bg-1) 80%),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  color: var(--text-gray);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    var(--neon-shadow);
+  transform: perspective(1000px) translateY(0px);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  transform: perspective(1000px) translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    var(--neon-shadow), 0 0 40px var(--accent)/40;
+}
+
+.text-neon {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: neon-shift 3s ease infinite;
+  text-shadow: var(--neon-shadow);
+}
+@keyframes neon-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-2);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  border-radius: 5px;
+  box-shadow: var(--neon-shadow);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent), var(--primary));
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.btn-neon {
+  transition: all 0.3s ease;
+}
+.btn-neon:hover {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
+  transform: scale(1.05);
+}
+/* ==================== Exp2页面专属精致化优化（2026-03-13）==================== */
+/* 1. 交通轨迹动态背景适配（贴合项目定位：交通识别） */
+.exp2-bg-container {
+  position: relative;
+  overflow: hidden;
+}
+.exp2-bg-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 112, 243, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0, 240, 255, 0.1) 0%, transparent 40%);
+  z-index: -1;
+  animation: exp2-bg-flow 20s linear infinite;
+}
+@keyframes exp2-bg-flow {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-5%) translateY(-3%); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+/* 2. 玻璃卡片精致化（保留原有毛玻璃，强化光影+层级） */
+.exp2-glass-card {
+  background: rgba(15, 23, 42, 0.7); /* 微调透明度，增强层次感 */
+  backdrop-filter: blur(12px); /* 比全局多4px，更精致 */
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 12px; /* 圆角更圆润 */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2), /* 底层阴影增强深度 */
+    inset 0 1px 0 rgba(255, 255, 255, 0.08), /* 内发光提升质感 */
+    0 0 10px rgba(0, 240, 255, 0.1); /* 弱霓虹边，不刺眼 */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* 更丝滑的过渡 */
+}
+.exp2-glass-card:hover {
+  transform: translateY(-4px); /* 轻微上浮，增强交互 */
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 15px rgba(0, 240, 255, 0.2), 0 0 30px rgba(0, 240, 255, 0.1);
+}
+
+/* 3. 数据卡片霓虹强化（突出核心指标，贴合评委展示） */
+.exp2-data-card {
+  position: relative;
+  overflow: hidden;
+}
+.exp2-data-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+  animation: exp2-data-shine 3s ease-in-out infinite;
+}
+@keyframes exp2-data-shine {
+  100% { left: 100%; }
+}
+
+/* 4. 表单/输入框精致化（提升用户交互体验） */
+.exp2-input {
+  background: rgba(15, 23, 42, 0.9); /* 更实的背景，提升输入可读性 */
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 14px 18px; /* 增大内边距，更舒适 */
+  font-size: 14px;
+  transition: all 0.3s ease;
+  caret-color: #00f0ff; /* 光标霓虹色，提升输入体验 */
+}
+.exp2-input:focus {
+  outline: none;
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  transform: translateY(-1px); /* 轻微上浮，反馈聚焦 */
+}
+.exp2-input::placeholder {
+  color: rgba(255, 255, 255, 0.4); /* 占位符更柔和 */
+}
+
+/* 5. 按钮精致化（强化霓虹+交互） */
+.exp2-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0070f3, #00f0ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+.exp2-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: exp2-btn-shine 2s ease-in-out infinite;
+}
+.exp2-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+}
+.exp2-btn:disabled {
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+@keyframes exp2-btn-shine {
+  100% { left: 100%; }
+}
+
+/* 6. 文字层级优化（提升可读性+贴合项目） */
+.exp2-title {
+  font-weight: 700;
+  letter-spacing: 0.5px; /* 轻微字间距，更精致 */
+  background: linear-gradient(90deg, #0070f3, #00f0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+}
+.exp2-subtitle {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.6; /* 行高更舒适 */
+}
+.exp2-highlight {
+  color: #00f0ff;
+  font-weight: 600;
+}
+
+/* 7. 滚动条极致精致化（全局兼容，不破坏原有） */
+.exp2-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* 更细，更精致 */
+}
+.exp2-container::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 3px;
+}
+.exp2-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0070f3, #00f0ff);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.exp2-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0050d0, #00d0ff);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+/* ==================== Exp2优化结束 ==================== */

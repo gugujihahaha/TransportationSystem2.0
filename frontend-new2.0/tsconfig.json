@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true, // 解决默认导入错误
+    "allowSyntheticDefaultImports": true, // 配合 esModuleInterop
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx", // 或者 "react-jsx"（Next.js 13+ 推荐）
+    "incremental": true,
+    "baseUrl": ".", // 必须设置为当前目录
+    "paths": { // 配置别名映射
+      "@/*": [
+        "./*"
+      ] // 使 @/ 指向项目根目录
+    },
+    "noEmitOnError": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "**/*.mts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

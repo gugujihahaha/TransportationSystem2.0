@@ -1,0 +1,40 @@
+{
+  "name": "frontend-new",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.2.0",
+    "@nextui-org/react": "^2.6.11",
+    "autoprefixer": "^10.4.27",
+    "axios": "^1.13.6",
+    "chart.js": "^4.5.1",
+    "crypto-js": "^4.2.0",
+    "csv-parser": "^3.2.0",
+    "echarts": "^6.0.0",
+    "framer-motion": "^12.36.0",
+    "next": "16.1.6",
+    "postcss": "^8.5.8",
+    "react": "19.2.3",
+    "react-chartjs-2": "^5.3.1",
+    "react-circular-progressbar": "^2.2.0",
+    "react-dom": "19.2.3",
+    "recharts": "^3.8.0",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20.19.37",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
+  }
+}
