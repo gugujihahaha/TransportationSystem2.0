@@ -26,7 +26,7 @@ export default function RegisterPage() {
     setIsSubmitting(true);
     try {
       await register(username, password, email.trim() || undefined);
-      router.push('/page');
+      router.push('/');
     } catch (err: any) {
       setError(err.message || '注册失败，该用户名可能已被占用');
     } finally {
@@ -106,7 +106,7 @@ export default function RegisterPage() {
         </form>
 
         <p className="mt-8 text-center text-sm exp2-subtitle">
-          已有账号？ <Link href="/" className="exp2-highlight hover:text-white transition-colors">返回登录</Link>
+          已有账号？ <Link href="/login" className="exp2-highlight hover:text-white transition-colors">返回登录</Link>
         </p>
       </motion.div>
     </div>
