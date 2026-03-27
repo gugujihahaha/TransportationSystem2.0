@@ -482,7 +482,7 @@ const handleMissionChange = (mission: typeof MISSIONS[0]) => {
         </div>
 
         <div className="lg:col-span-8 exp2-glass-card p-1 relative min-h-[500px] border border-blue-500/20 shadow-[0_0_30px_rgba(0,240,255,0.05)]overflow-hidden">
-          <Map points={currentPoints.map(p => ({lng: p.lng, lat: p.lat}))} center={mapCenter} predictedMode={predictedMode} />          
+          <Map points={currentPoints} center={mapCenter} predictedMode={predictedMode} />          
         </div>
       </div>
 
